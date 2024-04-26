@@ -1,0 +1,98 @@
+---
+openapi: "3.0.1"
+info:
+  title: "afAipSubmission"
+  description: "AF AIP Submission"
+  version: "1.0.0"
+  extensions: {}
+servers:
+- url: "/rhb/api/afaipsubmission"
+paths:
+  /submission:
+    post:
+      summary: "Adding Operations"
+      description: "Adding Operations"
+      operationId: "Adding Operations"
+      parameters:
+      - name: "sourceSystem"
+        in: "header"
+        description: "Source System"
+        required: true
+        schema:
+          type: "string"
+          extensions: {}
+          exampleSetFlag: false
+        extensions: {}
+      - name: "processId"
+        in: "header"
+        description: "ProcessId"
+        required: true
+        schema:
+          type: "string"
+          extensions: {}
+          exampleSetFlag: false
+        extensions: {}
+      - name: "processDate"
+        in: "header"
+        description: " Process Date"
+        required: true
+        schema:
+          type: "string"
+          format: "date"
+          extensions: {}
+          exampleSetFlag: false
+        extensions: {}
+      - name: "username"
+        in: "header"
+        description: " Username"
+        required: true
+        schema:
+          type: "string"
+          extensions: {}
+          exampleSetFlag: false
+        extensions: {}
+      - name: "password"
+        in: "header"
+        description: "Password"
+        required: true
+        schema:
+          type: "string"
+          extensions: {}
+          exampleSetFlag: false
+        extensions: {}
+      requestBody:
+        description: "AF AIP Submission Request Body"
+        content:
+          application/json:
+            schema:
+              $ref: "http://localhost:8089/admin/swagger-proxy/get?url=projects/RHBMAP/repos/rhb-api-models/raw/AFAIPSubmissionRequestBody.yaml?at=AFAIPSubmissionRequestBody#/components/schemas/AFAIPSubmissionRequestBody"
+              exampleSetFlag: false
+            exampleSetFlag: false
+        required: true
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "http://localhost:8089/admin/swagger-proxy/get?url=projects/RHBMAP/repos/rhb-api-models/raw/PFSubmitResponseBody.yaml?at=PFSubmitResponseBody#/components/schemas/PFSubmitResponseBody"
+                extensions: {}
+                exampleSetFlag: false
+              exampleSetFlag: false
+          extensions: {}
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "http://localhost:8089/admin/swagger-proxy/get?url=projects/RHBMAP/repos/rhb-api-models/raw/PFSubmitResponseBody.yaml?at=PFSubmitResponseBody#/components/schemas/PFSubmitResponseBody"
+                extensions: {}
+                exampleSetFlag: false
+              exampleSetFlag: false
+          extensions: {}
+      extensions:
+        x-codegen-request-body-name: "afAipSubmissionRequestBody"
+    extensions: {}
+components: {}
+extensions:
+  x-original-swagger-version: "2.0"
